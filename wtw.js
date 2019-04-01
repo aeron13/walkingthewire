@@ -14,12 +14,18 @@ function giocoWTW() {/**
       game.load.crossOrigin = 'anonymous';
 
       game.load.image('player', '/Risorsa 1.png');
+      game.load.image('line', '/line.png');
 
   }  // end of preload function
 
   var player;
 
   function create() {
+
+    //Line
+    line = game.add.sprite(0, 0, 'line');
+    line.width = game.world.width;
+    line.height = game.world.height;
 
     //player
     var scale = 0.6;
@@ -30,6 +36,8 @@ function giocoWTW() {/**
     /*player.width = 100;
     player.height = 100;*/
     //player.anchor.setTo(0.5);
+
+
 
   }   // end of create function
 
