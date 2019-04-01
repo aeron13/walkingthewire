@@ -15,11 +15,14 @@ function giocoWTW() {/**
 
       game.load.spritesheet('player', '/spritesheet1.png', 800, 870, 42);
       game.load.image('line', '/line.png');
+      game.load.image('bird', '/birdprova.png');
 
   }  // end of preload function
 
   var player;
+  //non incasina i click
   var controlClick = 0;
+  var bird;
 
   function create() {
 
@@ -45,6 +48,22 @@ function giocoWTW() {/**
     player.height = 100;*/
     //player.anchor.setTo(0.5);
 
+    //bird
+    this.bird = game.add.sprite(game.world.width/10*7, 0, 'bird');
+    this.bird.anchor.setTo(0.5, 0.5);
+
+
+    //path per il bird
+    this.points = {
+   'x': [game.world.width/10*7, game.world.width/10*6, 0],
+    'y': [0, game.world.height*1.05, game.world.height/10*3]
+    };
+
+    this.increment = 1 / game.width;
+    this.i = 0;
+
+
+
   }   // end of create function
 
 //cambia la animation
@@ -63,6 +82,15 @@ function onClick() {
 
 
   function update () {
+
+    //il bird si muove
+
+    var posx = this.math.bezierInterpolation(this.points.x, this.i);
+    var posy = this.math.bezierInterpolation(this.points.y, this.i);
+    this.bird.x = posx;
+    this.bird.y = posy;
+    this.i += this.increment;
+
 
 
 
