@@ -6,7 +6,7 @@ function giocoWTW() {/**
  * This source requires Phaser 2.6.2
  */
 
-  var game = new Phaser.Game(1000, 700, Phaser.AUTO, 'giocoWTW', { preload: preload, create: create, update: update, render: render });
+  var game = new Phaser.Game(1000, 700, Phaser.AUTO, 'giocoWTW', { preload: preload, create: create, update: update, render: render }, true);
 
   function preload() {
 
