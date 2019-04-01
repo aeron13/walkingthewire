@@ -51,7 +51,7 @@ function giocoWTW() {/**
     //bird
     this.bird = game.add.sprite(game.world.width/10*7, 0, 'bird');
     this.bird.anchor.setTo(0.5, 0.5);
-
+    this.bird.scale.setTo(0.5, 0.5);
 
     //path per il bird
     this.points = {
@@ -59,9 +59,8 @@ function giocoWTW() {/**
     'y': [0, game.world.height*1.05, game.world.height/10*3]
     };
 
-    this.increment = 1 / game.width;
+    this.increment = 5 / game.width;
     this.i = 0;
-
 
 
   }   // end of create function
@@ -84,16 +83,11 @@ function onClick() {
   function update () {
 
     //il bird si muove
-
     var posx = this.math.bezierInterpolation(this.points.x, this.i);
     var posy = this.math.bezierInterpolation(this.points.y, this.i);
     this.bird.x = posx;
     this.bird.y = posy;
     this.i += this.increment;
-
-
-
-
 
   }   // end of update function
 
