@@ -17,13 +17,14 @@ function giocoWTW() {/**
 
   }  // end of preload function
 
+  var player;
 
   function create() {
 
     //player
     //posizione del player
 
-    player = game.add.sprite(game.world.centerX, game.world.centerY, 'player');
+    player = game.add.sprite(game.world.centerX/2, game.world.centerY/2, 'player');
 
   }   // end of create function
 
