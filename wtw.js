@@ -23,7 +23,7 @@ function giocoWTW() {/**
     //player
     //posizione del player
 
-    player = game.add.sprite(844, 440, 'player');
+    player = game.add.sprite(game.world.centerX, game.world.centerY, 'player');
 
   }   // end of create function
 
