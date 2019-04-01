@@ -6,7 +6,7 @@ function giocoWTW() {/**
  * This source requires Phaser 2.6.2
  */
 
-  var game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.AUTO, 'giocoWTW', { preload: preload, create: create, update: update, render: render }, true);
+  var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, 'giocoWTW', { preload: preload, create: create, update: update, render: render }, true);
 
   function preload() {
 
@@ -23,10 +23,12 @@ function giocoWTW() {/**
 
     //player
     //var scale = 0.6;
-    player = game.add.sprite(game.world.centerX/2+50, game.world.height/20*6, 'player');
+    player = game.add.sprite(game.world.centerX-232/2, game.world.height/20*6, 'player');
+    console.log(game.world.centerX);
+    console.log(player.x);
     //player.scale.setTo(scale, scale);
-    player.width = 100;
-    player.height = 100;
+    /*player.width = 100;
+    player.height = 100;*/
     //player.anchor.setTo(0.5);
 
   }   // end of create function
