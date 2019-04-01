@@ -22,11 +22,11 @@ function giocoWTW() {/**
   function create() {
 
     //player
-    //var scale = 0.6;
+    var scale = 0.6;
     player = game.add.sprite(game.world.centerX-232/2, game.world.height/10*6, 'player');
     console.log(game.world.centerX);
-    console.log(player.x);
-    //player.scale.setTo(scale, scale);
+    player.scale.setTo(scale, scale);
+    player.x = game.world.centerX-player.width/2;
     /*player.width = 100;
     player.height = 100;*/
     //player.anchor.setTo(0.5);
