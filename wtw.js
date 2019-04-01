@@ -13,8 +13,7 @@ function giocoWTW() {/**
       game.load.baseURL = './assets';
       game.load.crossOrigin = 'anonymous';
 
-      game.load.image('player', '/Risorsa 1.png');
-      game.load.spritesheet('walk', '/spritesheet.png', 800, 870, 12);
+      game.load.spritesheet('player', '/spritesheet1.png', 800, 870, 19);
       game.load.image('line', '/line.png');
 
   }  // end of preload function
@@ -30,24 +29,30 @@ function giocoWTW() {/**
 
     //player
     var scale = 0.2;
-    player = game.add.sprite(game.world.centerX-232/2, game.world.height/10*6, 'walk');
+    player = game.add.sprite(game.world.centerX-232/2, game.world.height/10*6, 'player');
     console.log(game.world.centerX);
     player.scale.setTo(scale, scale);
     player.x = game.world.centerX-player.width/2;
-    var walkplayer = player.animations.add('walkplayer');
-    player.animations.play('walkplayer', 15, true);
+    //animations
+    player.animations.add('walk', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12], 13, true);
+    player.animations.add('crouch', [13, 14, 15, 16, 17, 18, 19], 10, false);
+    player.animations.play('walk');
+    //click
+    player.inputEnabled = true;
+    player.events.onInputDown.add(listener, this);
     /*player.width = 100;
     player.height = 100;*/
     //player.anchor.setTo(0.5);
 
-
-
   }   // end of create function
 
-
+function listener() {
+  player.animations.play('crouch');
+}
 
 
   function update () {
+
 
 
 
