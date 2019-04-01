@@ -23,9 +23,9 @@ function giocoWTW() {/**
   function create() {
 
     //Line
-    line = game.add.sprite(0, 0, 'line');
+    line = game.add.sprite(0, game.world.height/10*7.35, 'line');
     line.width = game.world.width;
-    line.height = game.world.height;
+    line.height = game.world.height/10;
 
     //player
     var scale = 0.6;
