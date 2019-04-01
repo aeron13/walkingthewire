@@ -23,7 +23,7 @@ function giocoWTW() {/**
 
     //player
     //var scale = 0.6;
-    player = game.add.sprite(game.world.centerX-232/2, game.world.height/20*6, 'player');
+    player = game.add.sprite(game.world.centerX-232/2, game.world.height/10*6, 'player');
     console.log(game.world.centerX);
     console.log(player.x);
     //player.scale.setTo(scale, scale);
