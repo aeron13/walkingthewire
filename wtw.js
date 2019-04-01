@@ -6,7 +6,7 @@ function giocoWTW() {/**
  * This source requires Phaser 2.6.2
  */
 
-  var game = new Phaser.Game(1000, 700, Phaser.AUTO, 'giocoWTW', { preload: preload, create: create, update: update, render: render }, true);
+  var game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.AUTO, 'giocoWTW', { preload: preload, create: create, update: update, render: render }, true);
 
   function preload() {
 
@@ -21,6 +21,8 @@ function giocoWTW() {/**
   function create() {
 
     //player
+    //posizione del player
+
     player = game.add.sprite(844, 440, 'player');
 
   }   // end of create function
