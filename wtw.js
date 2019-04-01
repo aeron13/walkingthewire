@@ -22,9 +22,8 @@ function giocoWTW() {/**
   function create() {
 
     //player
-    //posizione del player
-
-    player = game.add.sprite(game.world.centerX/2, game.world.centerY/2, 'player');
+    player = game.add.sprite(game.world.centerX/2, game.world.height/20*6, 'player');
+    //player.scale.setTo(80, 80);
 
   }   // end of create function
 
