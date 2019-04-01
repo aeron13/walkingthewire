@@ -14,6 +14,7 @@ function giocoWTW() {/**
       game.load.crossOrigin = 'anonymous';
 
       game.load.image('player', '/Risorsa 1.png');
+      game.load.spritesheet('walk', '/spritesheet.png', 800, 870, 12);
       game.load.image('line', '/line.png');
 
   }  // end of preload function
@@ -28,11 +29,13 @@ function giocoWTW() {/**
     line.height = game.world.height;
 
     //player
-    var scale = 0.6;
-    player = game.add.sprite(game.world.centerX-232/2, game.world.height/10*6, 'player');
+    var scale = 0.2;
+    player = game.add.sprite(game.world.centerX-232/2, game.world.height/10*6, 'walk');
     console.log(game.world.centerX);
     player.scale.setTo(scale, scale);
     player.x = game.world.centerX-player.width/2;
+    var walkplayer = player.animations.add('walkplayer');
+    player.animations.play('walkplayer', 15, true);
     /*player.width = 100;
     player.height = 100;*/
     //player.anchor.setTo(0.5);
