@@ -34,6 +34,7 @@ function giocoWTW() {/**
     //player
     var scale = 0.2;
     player = game.add.sprite(game.world.centerX-232/2, game.world.height/10*6, 'player');
+    game.physics.arcade.enable(player);
     console.log(game.world.centerX);
     player.scale.setTo(scale, scale);
     player.x = game.world.centerX-player.width/2;
@@ -52,6 +53,7 @@ function giocoWTW() {/**
     this.bird = game.add.sprite(game.world.width/10*7, 0, 'bird');
     this.bird.anchor.setTo(0.5, 0.5);
     this.bird.scale.setTo(0.5, 0.5);
+    game.physics.arcade.enable(this.bird);
 
     //path per il bird
     this.points = {
@@ -89,9 +91,19 @@ function onClick() {
     this.bird.y = posy;
     this.i += this.increment;
 
+    //bird and player
+    game.physics.arcade.overlap(player, this.bird, contact, null, this);
+    game.physics.arcade.collide(player, this.bird);
+
   }   // end of update function
 
+//il player muore
 
+function contact (player, bird) {
+  if(controlClick == 0) {
+        player.kill();
+  }
+}
 
 
   function render () {
