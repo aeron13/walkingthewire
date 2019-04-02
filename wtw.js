@@ -35,7 +35,6 @@ function giocoWTW() {/**
     var scale = 0.2;
     player = game.add.sprite(game.world.centerX-232/2, game.world.height/10*6, 'player');
     game.physics.arcade.enable(player);
-    console.log(game.world.centerX);
     player.scale.setTo(scale, scale);
     player.x = game.world.centerX-player.width/2;
     //animations
@@ -49,28 +48,29 @@ function giocoWTW() {/**
     player.height = 100;*/
     //player.anchor.setTo(0.5);
 
-    setTimeout(createBirds, 2000)
 
-    function createBirds() {
-      //bird
-      this.bird = game.add.sprite(game.world.width/10*7, 0, 'bird');
-      this.bird.anchor.setTo(0.5, 0.5);
-      this.bird.scale.setTo(0.5, 0.5);
-      game.physics.arcade.enable(this.bird);
+    //bird
+    bird = game.add.physicsGroup();
+    for(i=1; i<6; i++) bird.create(game.world.width/10*i+4, 0, 'bird');
 
-      //path per il bird
-      this.points = {
-        'x': [game.world.width/10*7, game.world.width/10*6, 0],
-        'y': [0, game.world.height*1.05, game.world.height/10*3]
-      };
+    bird.forEach(function(item) {
+      item.anchor.setTo(0.5, 0.5);
+      item.scale.setTo(0.5, 0.5);
+      game.physics.arcade.enable(item);
+    })
+    bird.setAll('outOfBoundsKill', true);
 
-      this.increment = 5 / game.width;
-      this.i = 0;
+    //path per il bird
+    this.points = {
+      'x': [game.world.width/10*7, game.world.width/10*6, 0],
+      'y': [0, game.world.height*1.05, game.world.height/10*3]
+    };
 
-      setTimeout(createBirds, 4000)
-    }
+    this.increment = 5 / game.width;
+    this.i = 0;
 
   }   // end of create function
+
 
 
 
@@ -94,16 +94,14 @@ function onClick() {
     //il bird si muove
     var posx = this.math.bezierInterpolation(this.points.x, this.i);
     var posy = this.math.bezierInterpolation(this.points.y, this.i);
-    this.bird.x = posx;
-    this.bird.y = posy;
+    bird.x = posx;
+    bird.y = posy;
     this.i += this.increment;
-    if(this.bird.x < 0) {
-      this.bird.kill();
-    }
+
 
     //bird and player
-    game.physics.arcade.overlap(player, this.bird, contact, null, this);
-    game.physics.arcade.collide(player, this.bird);
+    game.physics.arcade.overlap(player, bird, contact, null, this);
+    game.physics.arcade.collide(player, bird);
 
   }   // end of update function
 
