@@ -49,6 +49,11 @@ function giocoWTW() {/**
     player.height = 100;*/
     //player.anchor.setTo(0.5);
 
+    setTimeout(createBirds, 2000)
+
+  }   // end of create function
+
+  function createBirds() {
     //bird
     this.bird = game.add.sprite(game.world.width/10*7, 0, 'bird');
     this.bird.anchor.setTo(0.5, 0.5);
@@ -57,15 +62,16 @@ function giocoWTW() {/**
 
     //path per il bird
     this.points = {
-   'x': [game.world.width/10*7, game.world.width/10*6, 0],
-    'y': [0, game.world.height*1.05, game.world.height/10*3]
+      'x': [game.world.width/10*7, game.world.width/10*6, 0],
+      'y': [0, game.world.height*1.05, game.world.height/10*3]
     };
 
     this.increment = 5 / game.width;
     this.i = 0;
 
+    setTimeout(createBirds, 2000)
+  }
 
-  }   // end of create function
 
 //cambia la animation
 function onClick() {
@@ -90,6 +96,9 @@ function onClick() {
     this.bird.x = posx;
     this.bird.y = posy;
     this.i += this.increment;
+    if(this.bird.x < 0) {
+      this.bird.kill();
+    }
 
     //bird and player
     game.physics.arcade.overlap(player, this.bird, contact, null, this);
