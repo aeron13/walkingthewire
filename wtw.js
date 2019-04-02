@@ -69,7 +69,7 @@ function giocoWTW() {/**
     this.increment = 5 / game.width;
     this.i = 0;
 
-    setTimeout(createBirds, 2000)
+    setTimeout(createBirds, 4000)
   }
 
 
