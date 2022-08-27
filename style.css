@@ -47,11 +47,11 @@ body {
 }
 
 body.start {
-  background-image: url(sfondostart.png);
+  background-image: url(./assets/sfondostart.png);
 }
 
 body.game {
-  background-image: url(walking_the_wire.png);
+  background-image: url(./assets/walking_the_wire.png);
 }
 
 body.vittoria {
@@ -81,7 +81,7 @@ body.vittoria {
 }
 
 #cerchio.tutor {
-  background-image: url(trisorsa-7.png);
+  background-image: url(./assets/trisorsa-7.png);
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
@@ -103,7 +103,7 @@ body.vittoria {
 }
 
 .player.walk {
-  background-image: url(risorsa-7-03.png);
+  background-image: url(./assets/risorsa-7-03.png);
 
   -webkit-animation: play 1s steps(12) infinite;
 
@@ -112,7 +112,7 @@ body.vittoria {
 
 .player.crouchd {
 
-  background-image: url(risorsa-6-01.png);
+  background-image: url(./assets/risorsa-6-01.png);
    -webkit-animation: play2 0.45s steps(14) infinite;
 
    animation: play2 0.45s steps(14) infinite;
@@ -163,7 +163,7 @@ body.vittoria {
 	width: 50px;
   height: 50px;
   animation: yAxisR 2.5s 1 ease-out, fly 2.5s steps(24) infinite;
-	background-image: url(spritebird_tavola-disegno-1-copia.png);
+	background-image: url(./assets/spritebird_tavola-disegno-1-copia.png);
 
 }
 
@@ -204,7 +204,7 @@ body.vittoria {
 	width: 50px;
   height: 50px;
 	animation: yAxisL 2.5s 1 ease-out, fly 2.5s steps(24) infinite;
-  background-image: url(spritebird_tavola-disegno-1.png);
+  background-image: url(./assets/spritebird_tavola-disegno-1.png);
 }
 
 #cont.movexL {
@@ -321,7 +321,7 @@ body.vittoria {
   width: 100%;
   height: 50vh;
   position: absolute;
-  background-image: url(wire.png);
+  background-image: url(./assets/wire.png);
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: contain;
@@ -360,7 +360,7 @@ body.vittoria {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -70%);
-  background-image: url(titolo-wtw.svg);
+  background-image: url(./assets/titolo-wtw.svg);
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
@@ -373,7 +373,7 @@ body.vittoria {
   margin-top: 2em;
   bottom: 20%; left: 50%;
   transform: translate(-50%, 0);
-  /*background-image: url(play2.svg);*/
+  /*background-image: url(./assets/play2.svg);*/
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
@@ -384,7 +384,7 @@ body.vittoria {
 }
 
 #start.bianco {
-  background-image: url(play2bianco.svg);
+  background-image: url(./assets/play2bianco.svg);
   width: 40px;
 }
 
@@ -408,7 +408,7 @@ body.vittoria {
   background-repeat: no-repeat;
   width: 30px;
   height: 20px;
-  background-image: url(trisorsa-6.png);
+  background-image: url(./assets/trisorsa-6.png);
   position: absolute;
   top: 70%;
   }
