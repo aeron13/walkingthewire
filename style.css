@@ -1,0 +1,474 @@
+/* Insert Custom CSS here */
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:900');
+
+@font-face {
+  font-family: Circous;
+  src: url(thecircous.otf);
+}
+
+@font-face {
+  font-family: Circous-striped;
+  src: url(thecircousstriped.otf);
+}
+
+#comments {
+  display: none;
+}
+
+h1, h2, p, div {
+	font-family: 'Circous', sans-serif;
+}
+
+p {
+  font-size: 1.9em;
+}
+
+ul, li {
+  color: white;
+}
+
+.subhead {
+	text-align: center;
+	vertical-align: middle;
+	display: none;
+}
+
+
+
+body {
+	height: 100vh;
+	overflow-x: hidden !important;
+	background-color: #0e171f;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom center;
+  margin: 0;
+}
+
+body.start {
+  background-image: url(sfondostart.png);
+}
+
+body.game {
+  background-image: url(walking_the_wire.png);
+}
+
+body.vittoria {
+  background-color: white;
+}
+
+.page {
+  margin-bottom: 0;
+}
+
+#cerchio {
+	width: 368px;
+	height:400px;
+  transform-origin: center top;
+  transform: scale(0.4);
+  position: absolute;
+  /* !!! ----- non toccare queste dannatissime misureeee ---  */
+  left: calc(50% - 184px);
+  top: 60vh;
+  cursor: pointer;
+}
+
+#cerchio.piccolo {
+	height: 170px;
+  	transform: scale(0.4) translate(0, 230px);
+	transition: 0s;
+}
+
+#cerchio.tutor {
+  background-image: url(trisorsa-7.png);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.player {
+  z-index: 0;
+  pointer-events: none;
+	width: 368px;
+	height:400px;
+  transform-origin: center top;
+  transform: scale(0.4);
+  position: absolute;
+  /* !!! ----- non toccare queste dannatissime misureeee ------ !!! */
+  left: calc(50% - 184px);
+  top: 60vh;
+  cursor: pointer;
+  display: none;
+}
+
+.player.walk {
+  background-image: url(risorsa-7-03.png);
+
+  -webkit-animation: play 1s steps(12) infinite;
+
+   animation: play 1s steps(12) infinite;
+}
+
+.player.crouchd {
+
+  background-image: url(risorsa-6-01.png);
+   -webkit-animation: play2 0.45s steps(14) infinite;
+
+   animation: play2 0.45s steps(14) infinite;
+}
+
+@-webkit-keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -4416px; }
+}
+
+
+@keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -4416px; }
+}
+
+@-webkit-keyframes play2 {
+   from { background-position:    0px; }
+     to { background-position: -5152px; }
+}
+
+
+@keyframes play2 {
+   from { background-position:    0px; }
+     to { background-position: -5152px; }
+}
+
+.entry-content {
+	z-index: 0;
+}
+
+:root {
+  --top: 0;
+  --left: 80%;
+}
+
+@keyframes fly {
+   from { background-position:    0px; }
+     to { background-position: -1200px; }
+}
+
+#cont {
+  display: none;
+}
+
+.obj.moveyR {
+	position: absolute;
+	width: 50px;
+  height: 50px;
+  animation: yAxisR 2.5s 1 ease-out, fly 2.5s steps(24) infinite;
+	background-image: url(spritebird_tavola-disegno-1-copia.png);
+
+}
+
+
+
+#cont.movexR {
+	 display: block;
+	position: absolute;
+	top: var(--top);
+	left: var(--left);
+	animation: xAxisR 2.5s 1 ease-in;
+}
+
+   @keyframes xAxisR {
+
+  100% {
+		animation-timing-function: ease-out;
+		left: -10vh;
+  }
+}
+
+@keyframes yAxisR {
+	0% {
+    top: 0vh;
+	}
+  50% {
+    animation-timing-function: ease-out;
+    top: calc(58vh - 25px);
+  }
+	100% {
+		 animation-timing-function: ease-in;
+    top: 30vh;
+	}
+}
+
+.obj.moveyL {
+	position: absolute;
+	width: 50px;
+  height: 50px;
+	animation: yAxisL 2.5s 1 ease-out, fly 2.5s steps(24) infinite;
+  background-image: url(spritebird_tavola-disegno-1.png);
+}
+
+#cont.movexL {
+	 display: block;
+	position: absolute;
+	top: var(--top);
+	left: var(--left);
+	animation: xAxisL 2.5s 1 ease-in;
+}
+
+
+@keyframes xAxisL {
+
+  100% {
+		animation-timing-function: ease-out;
+		left: 100%;
+  }
+}
+
+@keyframes yAxisL {
+	0% {
+    top: 0vh;
+	}
+	50% {
+    animation-timing-function: ease-out;
+    top: calc(58vh - 25px);
+	}
+  100% {
+    animation-timing-function: ease-in;
+    top: 30vh;
+  }
+}
+
+.lose {
+	position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: #0e171f;
+  text-align: center;
+  top: 10%;
+  pointer-events: all;
+  cursor: pointer;
+  font-size: 1.2em;
+  display: none;
+  margin-block-start: 1em;
+}
+
+#nero {
+  color: white;
+}
+
+.reload {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -100%);
+   text-align: center;
+  vertical-align: bottom;
+}
+
+#bianco {
+  color: #0e171f;
+  top: 40%;
+}
+
+.widget-title {
+  display: none;
+}
+
+.noSelect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  }
+
+#barra {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 150px;
+  height: 6px;
+  background-color: white;
+  display: none;
+}
+
+#barrasu {
+  position: absolute;
+  height: 100%;
+  opacity: 0;
+  background-color: #ff4200;
+}
+
+#barrasu.perdic {
+  right: 0;
+	 transform: translate(-75px, 0);
+  transform-origin: right center;
+
+}
+
+#barrasu.vincic {
+  left: 0;
+  transform: translate(75px, 0);
+  transform-origin: left center;
+
+}
+
+#linea {
+  /*----- non toccare questi width height bottom e left!!!! -----*/
+  width: 100%;
+  height: 50vh;
+  position: absolute;
+  background-image: url(wire.png);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 50vh; left: 50%;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+  display: none;
+}
+
+#worry {
+  text-align: center;
+  color: #dd2f33;
+  position: absolute;
+ 	top: 40vh;
+  left: 0;
+  width: 100%;
+  transform: scale(1.2, 1.2);
+  pointer-events: none;
+  transform-origin: center center;
+  animation: ingrandisci 0.5s 1 linear;
+}
+
+    @keyframes ingrandisci {
+      0% {
+         transform: scale(1, 1);
+        opacity: 0.2;
+      }
+      100% {
+        transform: scale(1.2, 1.2);
+        opacity: 1;
+      }
+    }
+
+
+#title {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -70%);
+  background-image: url(titolo-wtw.svg);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 200px;
+}
+
+#start {
+  position: absolute;
+  margin-top: 2em;
+  bottom: 20%; left: 50%;
+  transform: translate(-50%, 0);
+  /*background-image: url(play2.svg);*/
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  height: 40px;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+#start.bianco {
+  background-image: url(play2bianco.svg);
+  width: 40px;
+}
+
+/*#tutorial {
+  background-image: url("https://walkingthewire.altervista.org/wp-content/uploads/2019/04/tRisorsa-4.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 40px;
+  transform-origin: center center;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, 0) rotate(90deg);
+}*/
+
+  .tut {
+    background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 20px;
+  background-image: url(trisorsa-6.png);
+  position: absolute;
+  top: 70%;
+  }
+
+    #tut1 {
+  left: 40%;
+  transform: translate(-50%, 0);
+}
+
+    #tut2 {
+  left: 60%;
+   transform: scale(-1, 1) translate(50%, 0);
+}
+
+.myfoot {
+position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  vertical-align: bottom;
+  font-size: 0.7em;
+  line-height: 150%;
+}
+
+.my1 {
+  top: 55vh;
+}
+
+.my2 {
+   top: 70vh;
+  line-height: 120%;
+}
+
+#name {
+  font-size: 1.5em;
+  line-height: 90%;
+}
+
+#introtext {
+  color: white;
+  font-size: 1.7em;
+
+}
+#dopo {
+ 	opacity: 0;
+  transition: 0.8s;
+}
+
+#nome1 {
+  position: absolute;
+  right: 5%;
+  top: 5vh;
+  text-align: right;
+  vertical-align: bottom;
+  font-size: 0.7em;
+  color: #0e171f;
+  /*transform: translate(-50%, 0);*/
+}
+
+form {
+  color: white;
+  display: none;
+}
