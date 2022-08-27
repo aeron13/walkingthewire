@@ -103,7 +103,7 @@ body.vittoria {
 }
 
 .player.walk {
-  background-image: url(./assets/risorsa-7-03.png);
+  background-image: url(./assets/spritesheet-walk.png);
 
   -webkit-animation: play 1s steps(12) infinite;
 
@@ -112,7 +112,7 @@ body.vittoria {
 
 .player.crouchd {
 
-  background-image: url(./assets/risorsa-6-01.png);
+  background-image: url(./assets/spritesheet-crouch.png);
    -webkit-animation: play2 0.45s steps(14) infinite;
 
    animation: play2 0.45s steps(14) infinite;
