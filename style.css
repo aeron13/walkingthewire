@@ -163,7 +163,7 @@ body.vittoria {
 	width: 50px;
   height: 50px;
   animation: yAxisR 2.5s 1 ease-out, fly 2.5s steps(24) infinite;
-	background-image: url(./assets/spritebird_tavola-disegno-1-copia.png);
+	background-image: url(./assets/spritebird.png);
 
 }
 
@@ -204,7 +204,7 @@ body.vittoria {
 	width: 50px;
   height: 50px;
 	animation: yAxisL 2.5s 1 ease-out, fly 2.5s steps(24) infinite;
-  background-image: url(./assets/spritebird_tavola-disegno-1.png);
+  background-image: url(./assets/spritebird.png);
 }
 
 #cont.movexL {
