@@ -3,7 +3,7 @@ var statointro = 1;
 var lampeggiostart;
 
 function intro() {
-    if (statointro == 1 && load == 1) {
+    if (statointro == 1) {
         //intro 1
         var introtext = "<p class='reload' id='introtext'>Solution <br><span id='dopo'> lies in balance.</span></p>"
 
@@ -57,4 +57,3 @@ function intro() {
     }
 }
 
-intro();
