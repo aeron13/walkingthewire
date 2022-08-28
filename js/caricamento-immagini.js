@@ -1,8 +1,8 @@
 var load = 0;
 
 var imagesSrc = [
-	"./assets/sfondostart.svg",
-	"./assets/spritebird.svg",
+	"./assets/sfondostart.png",
+	"./assets/spritebird.png",
 	"./assets/spritebirdL.png",
 	"./assets/spritesheet-crouch.png",
 	"./assets/spritesheet-walk.png",
