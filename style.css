@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: Circous;
-  src: url(./assets/thecircous.otf);
+  src: url(./assets/theCircous.otf);
 }
 
 @font-face {
   font-family: Circous-striped;
-  src: url(./assets/thecircousstriped.otf);
+  src: url(./assets/theCircousStriped.otf);
 }
 
 #comments {
