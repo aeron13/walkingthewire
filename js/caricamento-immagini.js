@@ -10,7 +10,7 @@ var imagesSrc = [
 ]
 
 
-imagesSrc.forEach((i, src) => {
+imagesSrc.forEach((src) => {
 	let img = new Image();
 	img.setAttribute("src", src)
 
