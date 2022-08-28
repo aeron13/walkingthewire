@@ -7,12 +7,8 @@
 		jQuery("#start").fadeIn(0).addClass("bianco");
 		lampeggiostart = setInterval(function(){lampeggio(jQuery("#start"))}, 3000);
 
-		//form
-		jQuery('form').fadeIn();
-
 		if(punti < 0 ) {
 			jQuery("#nero").text("Troppe preoccupazioni!")
-			.append(form)
 		} else if(punti > 0) {
 			jQuery("#nero").text("You can't always dodge problems.")
 		}
