@@ -1,20 +1,25 @@
-var img1 = new Image();
-img1.setAttribute("src", "https://walkingthewire.altervista.org/wp-content/uploads/2019/04/Risorsa-7-1.png");
-	var img2 = new Image();
-img2.setAttribute("src", "https://walkingthewire.altervista.org/wp-content/uploads/2019/04/Risorsa-6-1.png");
-	var img3 = new Image();
-img3.setAttribute("src", "https://walkingthewire.altervista.org/wp-content/uploads/2019/05/spritebird_Tavola-disegno-1-copia.png");
-	var img4 = new Image();
-img4.setAttribute("src", "https://walkingthewire.altervista.org/wp-content/uploads/2019/05/spritebird_Tavola-disegno-1.png");
-	var img5 = new Image();
-img5.setAttribute("src", "https://walkingthewire.altervista.org/wp-content/uploads/2019/05/tRisorsa-18.png");
-	var img6 = new Image();
-img6.setAttribute("src", "https://walkingthewire.altervista.org/wp-content/uploads/2019/04/tRisorsa-3.png");
+var load = 0;
 
-	var img7 = new Image();
-img7.setAttribute("src", "https://walkingthewire.altervista.org/wp-content/uploads/2019/04/tRisorsa-4.png");
+var imagesSrc = [
+	"../assets/sfondostart.svg",
+	"../assets/spritebird.svg",
+	"../assets/spritebirdL.png",
+	"../assets/spritesheet-crouch.png",
+	"../assets/spritesheet-walk.png",
+	"../assets/Walking_The_Wire.png"
+]
 
-	var img8 = new Image();
-img8.setAttribute("src", "https://walkingthewire.altervista.org/wp-content/uploads/2019/04/tRisorsa-5.png");
 
-	var load = 1;
+imagesSrc.forEach((i, src) => {
+	let img = new Image();
+	img.setAttribute("src", src)
+
+	img.onload = function() {
+		load++;
+		if (load == imagesSrc.length) 
+		{
+			intro();
+		}
+	}
+	if (img.complete) img.onload();
+})
