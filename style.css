@@ -191,7 +191,7 @@ body.vittoria {
 	}
   50% {
     animation-timing-function: ease-out;
-    top: calc(58vh - 25px);
+    top: calc(58vh - 20px);
   }
 	100% {
 		 animation-timing-function: ease-in;
@@ -230,7 +230,7 @@ body.vittoria {
 	}
 	50% {
     animation-timing-function: ease-out;
-    top: calc(58vh - 25px);
+    top: calc(58vh - 20px);
 	}
   100% {
     animation-timing-function: ease-in;

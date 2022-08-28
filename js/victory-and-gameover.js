@@ -8,7 +8,7 @@ function gameover() {
 	lampeggiostart = setInterval(function(){lampeggio(jQuery("#start"))}, 3000);
 
 	if(punti < 0 ) {
-		jQuery("#nero").text("Troppe preoccupazioni!")
+		jQuery("#nero").text("You are worrying too much!")
 	} else if(punti > 0) {
 		jQuery("#nero").text("You can't always dodge problems.")
 	}
